@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    overflow: hidden;
+}
+.container {
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+}
+.moon:hover:before{
+	background-color: Turquoise;
+}
+.sun {
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 3em white;
+}
+.earth,.moon,.jupiter,.mars {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 80%;
+}
+.mars {
+    top: 10em;
+    left: 10em;
+    width: 20em;
+    height: 20em; 
+    animation: orbit 12.5s linear infinite;  
+}
+.jupiter {
+    top: -10em;
+    left: -15em;
+    width: 70em;
+    height: 70em; 
+    animation: orbit 37.5s linear infinite;   
+}
+.earth {
+    top: 1em;
+    left: 1em;
+    width: 40em;
+    height: 40em; 
+    animation: orbit 24.5s linear infinite;   
+}
+.moon {
+    top: 2.7em;
+    right: 2.7em;
+    width: 6em;
+    height: 6em; 
+    animation: orbit 4.7s linear infinite;
+}
+.earth::before,
+.moon::before,
+.jupiter::before,
+.mars::before{
+    content: '';
+    position: absolute;
+    border-radius: 70%;
+}
+.mars::before {
+    top: 1.8em;
+    right: 1.8em;
+    width: 2em;
+    height: 2em;
+    background-color: DarkRed;    
+}
+.jupiter::before {
+    top: 6.8em;
+    right: 6.8em;
+    width: 7em;
+    height: 7em;
+    background-color: rgba(0, 191, 255, 0.562);    
+}
+.earth::before {
+    top: 3.8em;
+    right: 3.8em;
+    width: 4em;
+    height: 4em;
+    background-color: MediumSpringGreen;    
+}
+.moon::before {
+    top: 0.8em;
+    right: 0.2em;
+    width: 1em;
+    height: 1em;
+    background-color: rgb(230, 212, 212);
+}
+@keyframes orbit {
+    to {
+        transform: rotate(720deg);
+    }
+}
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sun"></div>
+		<div class="mars"></div>
+		<div class="jupiter"></div>
+        <div class="earth">
+          <div class="moon"></div>
+        </div>
+      </div>
+</body>
+</html>
